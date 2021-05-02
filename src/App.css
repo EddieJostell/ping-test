@@ -37,8 +37,12 @@
   }
 }
 
+form {
+  width: 100%;
+}
+
 .abc {
-  width: 800px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -55,7 +59,11 @@
   justify-content: baseline;
 }
 
-.bottom {
+table {
+  width: 100%;
+}
+
+/* .bottom {
   display: flex;
   justify-content: flex-start;
-}
+} */
