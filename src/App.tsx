@@ -14,17 +14,13 @@ function App() {
     adress: '',
   });
 
-  const mappedData = pingData.map((d, key) => {
+  const mappedData = pingData.map((d: IPingData, key: number) => {
     return (
       <tr key={key}>
         <td>
           <div className="checkbox-container">
             <label>
-              <input
-                name={d.country}
-                type="checkbox"
-                onClick={() => checkBoxChecked(pingData)}
-              />
+              <input name={d.country} type="checkbox" onClick={() => {}} />
             </label>
           </div>
         </td>
@@ -42,14 +38,19 @@ function App() {
     fetchDynamicInfo();
   };
 
-  const checkBoxChecked = (data: IPingData[]) => {
+  /*  const checkBoxChecked = (clickedCountry: string) => {
     //console.log('data', data);
     //console.log('checked');
-  };
+    fetchDynamicInfo();
+  }; */
 
   const fetchDynamicInfo = () => {
-    console.log(pingData);
-    /*  fetch(``)
+    console.log('fetchD', pingData);
+    /* let data = pingData.map((z: IPingData, key: number) => {
+
+    }) */
+    pingData[0].url;
+    fetch(`pingData`)
       .then((response) => {
         const responseJson = response.json();
         console.log(responseJson);
@@ -58,7 +59,7 @@ function App() {
       .then((info) => {})
       .catch((err) => {
         console.log(err);
-      }); */
+      });
   };
 
   return (
