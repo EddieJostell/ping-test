@@ -11,7 +11,7 @@ export interface IPingData {
 export const pingData: IPingData[] = [
   {
     id: 1,
-    url: "https://upcloud-fi-hel1.apps.bret.dk/test2?ip='",
+    url: 'https://upcloud-fi-hel1.apps.bret.dk/test2?ip=',
     provider: 'UpCloud',
     regionname: 'FI-HEL1',
     city: 'Helsinki',

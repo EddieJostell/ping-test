@@ -20,7 +20,11 @@ function App() {
         <td>
           <div className="checkbox-container">
             <label>
-              <input name={d.country} type="checkbox" onClick={() => {}} />
+              <input
+                name={d.country}
+                type="checkbox"
+                onClick={() => checkBoxChecked(d.url)}
+              />
             </label>
           </div>
         </td>
@@ -34,23 +38,18 @@ function App() {
 
   const onSubmit = (event: any) => {
     event.preventDefault();
-
-    fetchDynamicInfo();
   };
 
-  /*  const checkBoxChecked = (clickedCountry: string) => {
-    //console.log('data', data);
-    //console.log('checked');
-    fetchDynamicInfo();
-  }; */
+  const checkBoxChecked = (url: string) => {
+    console.log('checkboxChecked', url);
+    fetchDynamicInfo(url);
+  };
 
-  const fetchDynamicInfo = () => {
-    console.log('fetchD', pingData);
-    /* let data = pingData.map((z: IPingData, key: number) => {
+  const fetchDynamicInfo = (countryURL: string) => {
+    let fetchData = countryURL + userInfo.adress;
+    console.log('fetchD', fetchData);
 
-    }) */
-    pingData[0].url;
-    fetch(`pingData`)
+    fetch(`https://cors-anywhere.herokuapp.com/${fetchData}`, { mode: 'cors' })
       .then((response) => {
         const responseJson = response.json();
         console.log(responseJson);
